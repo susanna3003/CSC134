@@ -3,25 +3,66 @@ import turtle
 print('I imported the turtle')
 print('whoop de doo')
 
-emmy = turtle.Turtle()
+t = turtle.Turtle()
 
-emmy.pensize(5)
-emmy.pencolor("green")
-emmy.shape("turtle")
-emmy.speed(2)
+t.pensize(5)
+t.pencolor("green")
+t.shape("turtle")
+t.speed(3)
+t.fillcolor("light green")
 
-emmy.forward(80)
-emmy.left(45)
-emmy.forward(100)
-emmy.right(135)
-emmy.forward(100)
-emmy.left(45)
-emmy.forward(80)
-emmy.right(135)
-emmy.forward(80)
-emmy.left(45)
-emmy.forward(100)
-emmy.right(135)
-emmy.forward(80)
-emmy.left(35)
-emmy.forward(100)
+t.right(135)
+t.forward(25)
+
+t.left(45)
+t.forward(50)
+
+t.left(45)
+t.forward(50)
+
+t.left(90)
+t.forward(50)
+
+t.left(45)
+t.forward(50)
+
+t.left(45)
+t.forward(50)
+
+t.right(45)
+t.forward(50)
+
+t.penup()
+t.right(90)
+t.forward(30)
+t.right(90)
+t.forward(50)
+t.right(45)
+t.forward(20)
+t.pendown()
+
+t.right(180)
+t.forward(25)
+
+t.left(45)
+t.forward(50)
+
+t.left(45)
+t.forward(50)
+
+t.left(90)
+t.forward(50)
+
+t.left(45)
+t.forward(50)
+
+t.left(45)
+t.forward(50)
+
+t.right(45)
+t.forward(50)
+
+t.penup()
+t.left(90)
+t.forward(50)
+t.left(90)
