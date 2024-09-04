@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <cctype>
 using namespace std;
 /*
 1. Given a rectangle with height 8 and width 10, calculate and print the area. 
@@ -91,6 +92,24 @@ int menuFunc()
   cout << "Enter menu selection: ";
   cin >> user_choice;
   return user_choice;
+}
+
+int returnMenu() 
+{
+  int return_to_menu = 0;
+  char user_says;
+  cout << "Return to menu?\nY/N: ";
+  cin >> user_says;
+  user_says = tolower(user_says);
+  if (user_says == "y")
+  {
+    return_to_menu = 0;
+  }
+  else 
+  {
+    return_to_menu = 1;
+  }
+  return return_to_menu;
 }
 
 int main() 

@@ -5,7 +5,8 @@ using namespace std;
 // Susanna Quayle
 // 8/19/2024
 
-int main() { 
+int main() 
+{ 
   cout << "Hello World!" << endl; 
   cout << "Susanna Quayle" << endl;
   cout << "Completed degree in Computer Programming and Development, finishing gen eds to transfer for CS at State." << endl;
