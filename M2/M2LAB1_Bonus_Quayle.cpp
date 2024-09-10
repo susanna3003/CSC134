@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cctype>
 using namespace std;
 
 // CSC 134
@@ -11,8 +12,10 @@ using namespace std;
 void calcForCustomer()
 {
     // calculate crate cost for customer
+    // this function declares vars for crate calculation
+    // get dimensions from user, calculate individual crate cost, get total crate order, and calculate total cost
     const double COST_PER_CUBIC_FOOT = 0.23;
-    const double CHARGE_PER_CUBIC_FOOT = 0.5;
+    const double CHARGE_PER_CUBIC_FOOT = 0.50;
     int length;
     int width;
     int height;
@@ -49,7 +52,7 @@ void calcForManufacture()
 {
     // calculate crate cost for manufacturer
     const double COST_PER_CUBIC_FOOT = 0.23;
-    const double CHARGE_PER_CUBIC_FOOT = 0.5;
+    const double CHARGE_PER_CUBIC_FOOT = 0.50;
     int length;
     int width;
     int height;
@@ -81,28 +84,12 @@ void calcForManufacture()
     total_cost = num_crates * cost;
 
     cout << "\nCost is $" << total_cost << " for an order of " << num_crates << " crates." << endl;
-    // cout << "Company profit is $" << profit << endl;
 }
 
-int main()
+int backToMenu()
 {
-    // set up variables
     string name;
     int user_type;
-    const double COST_PER_CUBIC_FOOT = 0.23;
-    const double CHARGE_PER_CUBIC_FOOT = 0.5;
-    int length;
-    int width;
-    int height;
-    int volume;
-    double cost;
-    double customer_price;
-    double profit;
-    int num_crates;
-    double total_cost;
-    double customer_total;
-
-
     // greeting
     cout << "Hello user, what is your name? ";
     cin >> name;
@@ -113,11 +100,24 @@ int main()
     cout << "2. Manufacturing services" << endl;
     cout << "> ";
     cin >> user_type;
+    return user_type;
+}
+
+int main()
+{
+    // set up variables
+    string name;
+    int user_type;
+    char menu_again;
+    const double COST_PER_CUBIC_FOOT = 0.23;
+    const double CHARGE_PER_CUBIC_FOOT = 0.50;
+
+    user_type = backToMenu();
 
     if (user_type == 1)
     {
         int customer_menu_select;
-        cout << "Welcome to Customer services. \nHere you may \n1. view crate cost per cubic foot\n2. order crates.\n> ";
+        cout << "Welcome to Customer services. \nHere you may \n1. view crate cost per cubic foot\n2. order crates\n> ";
         cin >> customer_menu_select;
         if (customer_menu_select == 1)
         {
@@ -135,7 +135,7 @@ int main()
     else if (user_type == 2)
     {
         int manufacture_menu_select;
-        cout << "Welcome to Manufacture services. \nHere you may \n1. view crate cost per cubic foot\n2. full crate cost\n3. order crates.\n> ";
+        cout << "Welcome to Manufacture services. \nHere you may \n1. view crate cost per cubic foot\n2. order crates\n> ";
         cin >> manufacture_menu_select;
         if (manufacture_menu_select == 1)
         {
