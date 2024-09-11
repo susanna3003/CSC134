@@ -86,72 +86,76 @@ void calcForManufacture()
     cout << "\nCost is $" << total_cost << " for an order of " << num_crates << " crates." << endl;
 }
 
-int backToMenu()
-{
-    string name;
-    int user_type;
-    // greeting
-    cout << "Hello user, what is your name? ";
-    cin >> name;
-    cout << "Nice to meet you, " << name << endl;
-    cout << "\n--- CRATE COMPANY ---" << endl;
-    cout << "\tWelcome!" << endl;
-    cout << "1. Customer services" << endl;
-    cout << "2. Manufacturing services" << endl;
-    cout << "> ";
-    cin >> user_type;
-    return user_type;
-}
-
 int main()
 {
     // set up variables
     string name;
     int user_type;
-    char menu_again;
+    bool continue_menu = true;
     const double COST_PER_CUBIC_FOOT = 0.23;
     const double CHARGE_PER_CUBIC_FOOT = 0.50;
 
-    user_type = backToMenu();
+    cout << "\nHello user, what is your name? ";
+    cin >> name;
+    cout << "Nice to meet you, " << name << endl;
 
-    if (user_type == 1)
+    while (continue_menu)
     {
-        int customer_menu_select;
-        cout << "Welcome to Customer services. \nHere you may \n1. view crate cost per cubic foot\n2. order crates\n> ";
-        cin >> customer_menu_select;
-        if (customer_menu_select == 1)
+        // greeting
+        cout << "\n--- CRATE COMPANY ---" << endl;
+        cout << "\tWelcome!" << endl;
+        cout << "1. Customer services" << endl;
+        cout << "2. Manufacturing services" << endl;
+        cout << "3. Exit" << endl;
+        cout << "> ";
+        cin >> user_type;
+    
+        switch(user_type)
         {
-            cout << "Cost per cubic foot is $" << CHARGE_PER_CUBIC_FOOT << endl;
+            case 1:
+                int customer_menu_select;
+                cout << "\nWelcome to Customer services. \nHere you may \n1. view crate cost per cubic foot\n2. order crates\n> ";
+                cin >> customer_menu_select;
+                if (customer_menu_select == 1)
+                {
+                    cout << "Cost per cubic foot is $" << CHARGE_PER_CUBIC_FOOT << endl;
+                }
+                else if (customer_menu_select == 2)
+                {
+                    calcForCustomer();
+                }
+                else
+                {
+                    cout << "Invalid choice." << endl;
+                }
+                break;
+            
+            case 2:
+                int manufacture_menu_select;
+                cout << "\nWelcome to Manufacture services. \nHere you may \n1. view crate cost per cubic foot\n2. order crates\n> ";
+                cin >> manufacture_menu_select;
+                if (manufacture_menu_select == 1)
+                {
+                    cout << "Cost per cubic foot is $" << COST_PER_CUBIC_FOOT << endl;
+                }
+                else if (manufacture_menu_select == 2)
+                {
+                    calcForManufacture();
+                }
+                else
+                {
+                    cout << "Invalid choice." << endl;
+                }
+                break;
+
+            case 3:
+            continue_menu = false;
+                cout << "Have a great day, bye!" << endl;
+                break;
+
+            default:
+                cout << "Invalid choice." << endl;
+                break;
         }
-        else if (customer_menu_select == 2)
-        {
-            calcForCustomer();
-        }
-        else
-        {
-            cout << "Invalid choice." << endl;
-        }
-    }
-    else if (user_type == 2)
-    {
-        int manufacture_menu_select;
-        cout << "Welcome to Manufacture services. \nHere you may \n1. view crate cost per cubic foot\n2. order crates\n> ";
-        cin >> manufacture_menu_select;
-        if (manufacture_menu_select == 1)
-        {
-            cout << "Cost per cubic foot is $" << CHARGE_PER_CUBIC_FOOT << endl;
-        }
-        else if (manufacture_menu_select == 2)
-        {
-            calcForManufacture();
-        }
-        else
-        {
-            cout << "Invalid choice." << endl;
-        }
-    }
-    else
-    {
-        cout << "Invalid choice." << endl;
     }
 }
