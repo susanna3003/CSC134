@@ -32,4 +32,17 @@ int main()
     // OUTPUT display rectangle sizes and which is larger
     cout << "The first rectangle's area is: " << area1 << endl;
     cout << "The second rectangle's area is: " << area2 << endl;
+
+    if (area1 > area2) 
+    {
+        cout << "The first rectangle is larger." << endl;
+    }
+    else if (area2 > area1)
+    {
+        cout << "The second rectangle is larger." << endl;
+    }
+    else
+    {
+        cout << "The rectangles are the same size!" << endl;
+    }
 }
