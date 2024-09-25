@@ -10,10 +10,13 @@ using namespace std;
 int main()
 {
     int user_choice;
+    string rand_input;
     string name;
     cout << "Hello! Welcome aboard the ship! What is your name?" << endl;
     cin >> name;
-    cout << "\nAlright " << name << ", are you ready to brave these waters?\n\nOh it doesn't matter, you're aboard and we are set off to the seas!" << endl;
+    cout << "\nAlright " << name << ", are you ready to brave these waters?" << endl;
+    cin >> rand_input;
+    cout << "\nOh it doesn't matter, you're aboard and we are set off to the seas!\n" << endl;
 
     cout << "       __|__               You wake up to the sound of thunder crashing around you.\n"
         << "       |     |              The ship is violently rocking as waves pound against its hull.\n"
@@ -44,16 +47,67 @@ int main()
         cout << "~ ~ ~~~";
         cout << "     ~ ~~~     ~";
         cout << "~~~ ~  ~       ~";
-        cout << "~      ~~~     ~~";
+        cout << "~      ~~~     ~~" << endl;
         cout << "Oh dear, it seems a shark has chewed off your legs while they dangled off your rusty plank and you bled out to death. RIP" << endl;
 
-        cout << "     _______   \n";
-        cout << "    /      \\  \n";
-        cout << "   /        \\ \n";
-        cout << "  |   R.I.P   | \n";
-        cout << "  |           |    \n";
-        cout << "  |  " << name << "  | \n";
-        cout << "  |           |    \n";
-        cout << "  |___________|    \n";
+        cout << "     _______   \n"
+             << "    /       \\  \n"
+             << "   /         \\ \n"
+             << "  |   R.I.P   | \n"
+             << "  |           |    \n"
+             << "  |  " << name << "  | \n"
+             << "  |           |    \n"
+             << "  |___________|    \n";
+    }
+    else if(user_choice == 2)
+    {
+        cout << "You have chosen the wooden door!" << endl;
+        cout << "Unfortunately, this was also chosen by a snobby British girl and she has taken up all of the room on the door. You are left to hold on with your legs dangling in the water where a shark chews them off and you bleed to death. RIP" << endl;
+                
+        cout << "     _______   \n"
+             << "    /       \\  \n"
+             << "   /         \\ \n"
+             << "  |   R.I.P   | \n"
+             << "  |           |    \n"
+             << "  |  " << name << "  | \n"
+             << "  |           |    \n"
+             << "  |___________|    \n";
+    }
+    else if (user_choice == 3)
+    {
+        cout << "You have chosen the safety raft! Not bad..." << endl;
+        cout << "This raft leads you to a wild tropical island where the islanders welcome you and make you king!" << endl;
+
+        cout << "    \\ /         \\ /         \\ /         \\ /\n"
+             << "     o           o           o           o \n"
+             << "    /|\\         /|\\         /|\\         /|\\    \n"
+             << "    / \\         / \\         / \\         / \\    \n";
+    }
+    else if (user_choice == 4)
+    {
+        cout << "You have chosen the floating barrel. A very wise choice." << endl;
+        cout << "The barrel floats into a harbor bay where you are taken to safety, the only survivor of this deadly crash. Congratulations!" << endl;
+
+        cout << "\n    \\     YAY!!!     /\n"
+             << "     \\______________/\n"
+             << "     |              |\n"
+             << "  \\  |   " << name << " did it!|  /\n"
+             << "   \\ |   Survivor!   | /\n"
+             << "    \\|______________|/\n"
+             << "       Congratulations!\n"
+             << "\n";
+    }
+    else
+    {
+        cout << "That wasn't one of the options... you have drowned in your indecisiveness. RIP" << endl;
+
+        cout << "     _______   \n"
+             << "    /       \\  \n"
+             << "   /         \\ \n"
+             << "  |   R.I.P   | \n"
+             << "  |           |    \n"
+             << "  |  " << name << "  | \n"
+             << "  |           |    \n"
+             << "  |___________|    \n";
     }
 }
