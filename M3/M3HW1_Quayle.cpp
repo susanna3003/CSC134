@@ -252,6 +252,7 @@ int main()
                 {
                     cout << "That wasn't even an option! I don't wanna talk to you anymore." << endl;
                 }
+                
                 break;
             }
             
@@ -259,13 +260,48 @@ int main()
             {
                 // Q2 - calc receipt
                 // INPUT
+                // declare vars
+                double meal_price = 5.99;
+                double tax = 0.08;
+                double tax_amt = meal_price * tax;
+                double total = meal_price + tax_amt;
+                double tip = 0.15;
+                double tip_amt = total * tip;
+                double tipped_total = total + tip_amt;
+                int dine_type;
 
+                // limit decimals
+                tax_amt = floor(tax_amt * 100.0) / 100.0;
+                total = floor(total * 100.0) / 100.0;
+                tip_amt = floor(tip_amt * 100.0) / 100.0;
+                tipped_total = floor(tipped_total * 100.0) / 100.0;
 
-                // PROCESS
+                // print receipt
+                cout << "--- MAMMA MIA'S PIZZERIA ---" << endl;
+                cout << "(1) Dine in or (2) Take out" << endl;
+                cin >> dine_type;
 
-
-                // OUTPUT
-
+                if (dine_type == 1)
+                {
+                    cout << "--- DINE IN ---" << endl;
+                    cout << "\nLUNCH\t$" << meal_price << endl;
+                    cout << "TAX\t$" << tax_amt << endl;
+                    cout << "TIP\t$" << tip_amt << endl;
+                    cout << "--------------" << endl;
+                    cout << "\nTOTAL\t$" << tipped_total << endl;
+                }
+                else if(dine_type == 2)
+                {
+                    cout << "--- TAKE OUT ---" << endl;
+                    cout << "\nLUNCH\t$" << meal_price << endl;
+                    cout << "TAX\t$" << tax_amt << endl;
+                    cout << "--------------" << endl;
+                    cout << "\nTOTAL\t$" << total << endl;
+                }
+                else
+                {
+                    cout << "Invalid input, please try again." << endl;
+                }
 
                 break;
             }

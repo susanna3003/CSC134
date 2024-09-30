@@ -10,16 +10,6 @@ using namespace std;
 // Susanna Quayle
 // 9/30/2024
 
-void calcForCustomer()
-{
-    //
-}
-
-void calcForManufacture()
-{
-    //
-}
-
 int main()
 {
     // set up variables
