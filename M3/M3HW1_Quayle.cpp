@@ -261,10 +261,13 @@ int main()
                 // Q2 - calc receipt
                 // INPUT
                 // declare vars
-                double meal_price = 5.99;
+                double lunch_price = 6.99;
+                double lasagna_dinner_price = 8.99;
+                double pizza_dinner_price = 11.99;
+                double calzone_dinner_price = 9.99;
                 double tax = 0.08;
-                double tax_amt = meal_price * tax;
-                double total = meal_price + tax_amt;
+                double tax_amt = lunch_price * tax;
+                double total = lunch_price + tax_amt;
                 double tip = 0.15;
                 double tip_amt = total * tip;
                 double tipped_total = total + tip_amt;
@@ -284,7 +287,8 @@ int main()
                 if (dine_type == 1)
                 {
                     cout << "--- DINE IN ---" << endl;
-                    cout << "\nLUNCH\t$" << meal_price << endl;
+                    cout << "\nLUNCH\t$" << endl;
+                    cout << "2 SLICES + SODA\t" << lunch_price << endl;
                     cout << "TAX\t$" << tax_amt << endl;
                     cout << "TIP\t$" << tip_amt << endl;
                     cout << "--------------" << endl;
@@ -310,7 +314,7 @@ int main()
             {
                 // Q3 - choose your own adventure
                 // INPUT
-                
+                cout << "broken" << endl;
 
                 // PROCESS
                 
@@ -325,7 +329,7 @@ int main()
             {
                 // Q4 - math
                 // INPUT
-
+                cout << "broken" << endl;
 
                 // PROCESS
 
