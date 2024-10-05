@@ -32,7 +32,7 @@ int main()
         cout << "Take your pick!" << endl;
         cout << "1. Chat with InsecureBot" << endl;
         cout << "2. Receipt Calculator" << endl;
-        cout << "3. Choose Your Own" << endl;
+        cout << "3. Which Programming Language Are You?" << endl;
         cout << "4. Math Practice" << endl;
         cout << "5. Exit" << endl;
         cout << "> ";
@@ -297,7 +297,7 @@ int main()
                 else if(dine_type == 2)
                 {
                     cout << "--- TAKE OUT ---" << endl;
-                    cout << "\nLUNCH\t$" << meal_price << endl;
+                    cout << "\nLUNCH\t$" << lunch_price << endl;
                     cout << "TAX\t$" << tax_amt << endl;
                     cout << "--------------" << endl;
                     cout << "\nTOTAL\t$" << total << endl;
@@ -312,15 +312,96 @@ int main()
 
             case 3:
             {
-                // Q3 - choose your own adventure
+                // Q3 - which programming language are you
                 // INPUT
-                cout << "broken" << endl;
+                string go;
+                bool keep_playing = true;
+                int response1, response2;
 
-                // PROCESS
-                
+                cout << "\n| Which Programming Language Are You? |" << endl;
+                cout << "| Press any key to begin playing |" << endl;
+                cin >> go;
 
-                // OUTPUT
+                while (keep_playing == true)
+                {
+                    cout << "When working on a project, what is more important to you?" << endl;
+                    cout << "[1] Keeping things simple and straightforward.\t[2] Having full control over every little detail.\n";
+                    cin >> response1;
+                    if (response1 == 1)
+                    {
+                        // python or js
+                        cout << "How do you prefer to work?" << endl;
+                        cout << "[1] I like to follow clear guidelines and stay organized.\t[2] I enjoy being flexible and figuring things out as I go.\n";
+                        cin >> response2;
+                        if (response2 == 1)
+                        {
+                            // structure - python
+                            cout << "\n---- PYTHON ----" << endl;
+                            cout << "You’re Python! Practical and efficient, you like solving problems"
+                                << "without making things more complicated than they need to be.\n"
+                                << "You value simplicity and clarity, preferring to follow established methods that just work.\n" << endl;
+                        }
+                        else if (response2 == 2)
+                        {
+                            // flexibility - js
+                            cout << "\n---- JAVASCRIPT ----" << endl;
+                            cout << "You’re JavaScript! You thrive on creativity and adaptability.\n"
+                                << "You enjoy experimenting with new ideas and aren’t afraid to dive into unknown territory.\n"
+                                << "Flexibility is your strength, and you can adapt to whatever situation arises.\n" << endl;
+                        }
+                        else 
+                        {
+                            cout << "invalid response" << endl;
+                        }
+                    }
+                    else if (response1 == 2) 
+                    {
+                        // c++ or java
+                        cout << "What’s your approach when something goes wrong?" << endl;
+                        cout << "[1] I like to dive deep and optimize everything to perfection.\t[2] I prefer to make things stable and reliable, even if it takes more time.\n";
+                        cin >> response2;
+                        if (response2 == 1)
+                        {
+                            // optimization - c++
+                            cout << "\n---- C++ ----" << endl;
+                            cout << "You’re C++! You’re all about control and precision.\n"
+                                << "You enjoy working on the fine details, optimizing everything to perform as efficiently as possible.\n"
+                                << "You like to take your time to make sure everything is perfect and in your control.\n" << endl;
+                        }
+                        else if (response2 == 2)
+                        {
+                            // stability - java
+                            cout << "\n---- JAVA ----" << endl;
+                            cout << "You’re Java! Structured and reliable, you like to stay organized and focus on making things stable.\n"
+                                << "You prefer to work in environments where everything has its place, and you value methods that have stood the test of time.\n" << endl;
+                        
+                        }
+                        else 
+                        {
+                            cout << "invalid response" << endl;
+                        }
+                    }
+                    else
+                    {
+                        cout << "Invalid response, try again." << endl;
+                    }
 
+                    cout << "| Keep Playing? |" << endl;
+                    cout << "| y/n |\n";
+                    cin >> go;
+                    if (go == "y")
+                    {
+                        keep_playing = true;
+                    }
+                    else if (go == "n")
+                    {
+                        keep_playing = false;
+                    }
+                    else
+                    {
+                        cout << "invalid response" << endl;
+                    }
+                }
 
                 break;
             }
@@ -329,13 +410,266 @@ int main()
             {
                 // Q4 - math
                 // INPUT
-                cout << "broken" << endl;
+                int math_menu;
+                int math_mode;
+                bool math_go = true;
+                cout << "---- MATH QUIZ ----" << endl;
+                cout << "1. Addition" << endl;
+                cout << "2. Subtraction" << endl;
+                cout << "3. Multiplication" << endl;
+                cout << "4. Division" << endl;
+                cout << "5. Word Problem" << endl;
+                cout << "> ";
+                cin >> math_menu;
 
-                // PROCESS
+                while (math_go == true)
+                {
+                    switch(math_menu)
+                    {
+                        case 1:
+                        {
+                            // addition
+                            bool addition_go = true;
+                            cout << "MODE: HARD / EASY" << endl;
+                            cout << "[1] HARD\t[2] EASY\n";
+                            cin >> math_mode;
+                            
+                            while (addition_go == true)
+                            {
+                                if (math_mode == 1)
+                                {
+                                    // hard
+                                    double num1 = 19.8;
+                                    double num2 = 74.7;
+                                    double answer = num1 + num2;
+                                    double user_answer;
 
+                                    cout << num1 << " + " << num2 << "\n";
+                                    cin >> user_answer;
+                                    if (user_answer == answer)
+                                    {
+                                        cout << "Correct!" << endl;
+                                        addition_go = false;
+                                    }
+                                    else
+                                    {
+                                        cout << "Wrong, try again." << endl;
+                                    }
+                                }
+                                else if (math_mode == 2)
+                                {
+                                    // easy
+                                    int num1 = 25;
+                                    int num2 = 12;
+                                    int answer = num1 + num2;
+                                    int user_answer;
 
-                //OUTPUT
+                                    cout << num1 << " + " << num2 << "\n";
+                                    cin >> user_answer;
+                                    if (user_answer == answer)
+                                    {
+                                        cout << "Correct!" << endl;
+                                        addition_go = false;
+                                    }
+                                    else
+                                    {
+                                        cout << "Wrong, try again." << endl;
+                                    }
+                                }
+                                else
+                                {
+                                    cout << "invalid response" << endl;
+                                }
+                            }
+                            
+                            break;
+                        }
+                        
+                        case 2:
+                        {
+                            // subtraction
+                            bool subtraction_go = true;
+                            cout << "MODE: HARD / EASY" << endl;
+                            cout << "[1] HARD\t[2] EASY\n";
+                            cin >> math_mode;
+                            
+                            while (subtraction_go == true)
+                            {
+                                if (math_mode == 1)
+                                {
+                                    // hard
+                                    double num1 = 67.4;
+                                    double num2 = 13.6;
+                                    double answer = num1 - num2;
+                                    double user_answer;
 
+                                    cout << num1 << " - " << num2 << "\n";
+                                    cin >> user_answer;
+                                    if (user_answer == answer)
+                                    {
+                                        cout << "Correct!" << endl;
+                                        subtraction_go = false;
+                                    }
+                                    else
+                                    {
+                                        cout << "Wrong, try again." << endl;
+                                    }
+                                }
+                                else if (math_mode == 2)
+                                {
+                                    // easy
+                                    int num1 = 76;
+                                    int num2 = 45;
+                                    int answer = num1 - num2;
+                                    int user_answer;
+
+                                    cout << num1 << " - " << num2 << "\n";
+                                    cin >> user_answer;
+                                    if (user_answer == answer)
+                                    {
+                                        cout << "Correct!" << endl;
+                                        subtraction_go = false;
+                                    }
+                                    else
+                                    {
+                                        cout << "Wrong, try again." << endl;
+                                    }
+                                }
+                                else
+                                {
+                                    cout << "invalid response" << endl;
+                                }
+                            }
+
+                            break;
+                        }
+                        
+                        case 3:
+                        {
+                            // multiplication
+                            bool multiplication_go = true;
+                            cout << "MODE: HARD / EASY" << endl;
+                            cout << "[1] HARD\t[2] EASY\n";
+                            cin >> math_mode;
+                            
+                            while (multiplication_go == true)
+                            {
+                                if (math_mode == 1)
+                                {
+                                    // hard
+                                    double num1 = 20.5;
+                                    double num2 = 2.2;
+                                    double answer = num1 * num2;
+                                    double user_answer;
+
+                                    cout << num1 << " * " << num2 << "\n";
+                                    cin >> user_answer;
+                                    if (user_answer == answer)
+                                    {
+                                        cout << "Correct!" << endl;
+                                        multiplication_go = false;
+                                    }
+                                    else
+                                    {
+                                        cout << "Wrong, try again." << endl;
+                                    }
+                                }
+                                else if (math_mode == 2)
+                                {
+                                    // easy
+                                    int num1 = 12;
+                                    int num2 = 11;
+                                    int answer = num1 * num2;
+                                    int user_answer;
+
+                                    cout << num1 << " * " << num2 << "\n";
+                                    cin >> user_answer;
+                                    if (user_answer == answer)
+                                    {
+                                        cout << "Correct!" << endl;
+                                        multiplication_go = false;
+                                    }
+                                    else
+                                    {
+                                        cout << "Wrong, try again." << endl;
+                                    }
+                                }
+                                else
+                                {
+                                    cout << "invalid response" << endl;
+                                }
+                            }
+
+                            break;
+                        }
+                        
+                        case 4:
+                        {
+                            // division
+                            bool division_go = true;
+                            cout << "MODE: HARD / EASY" << endl;
+                            cout << "[1] HARD\t[2] EASY\n";
+                            cin >> math_mode;
+                            
+                            while (division_go == true)
+                            {
+                                if (math_mode == 1)
+                                {
+                                    // hard
+                                    double num1 = 240.8;
+                                    double num2 = 4.8;
+                                    double answer = num1 / num2;
+                                    double user_answer;
+
+                                    cout << num1 << " / " << num2 << "\n";
+                                    cin >> user_answer;
+                                    if (user_answer == answer)
+                                    {
+                                        cout << "Correct!" << endl;
+                                        division_go = false;
+                                    }
+                                    else
+                                    {
+                                        cout << "Wrong, try again." << endl;
+                                    }
+                                }
+                                else if (math_mode == 2)
+                                {
+                                    // easy
+                                    int num1 = 244;
+                                    int num2 = 12;
+                                    int answer = num1 / num2;
+                                    int user_answer;
+
+                                    cout << num1 << " / " << num2 << "\n";
+                                    cin >> user_answer;
+                                    if (user_answer == answer)
+                                    {
+                                        cout << "Correct!" << endl;
+                                        division_go = false;
+                                    }
+                                    else
+                                    {
+                                        cout << "Wrong, try again." << endl;
+                                    }
+                                }
+                                else
+                                {
+                                    cout << "invalid response" << endl;
+                                }
+                            }
+
+                            break;
+                        }
+
+                        case 5:
+                        {
+                            // word problem
+                            cout << "broken" << endl;
+                            break;
+                        }
+                    }
+                }
 
                 break;
             }
