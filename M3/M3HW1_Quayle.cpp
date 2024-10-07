@@ -419,6 +419,7 @@ int main()
                 cout << "3. Multiplication" << endl;
                 cout << "4. Division" << endl;
                 cout << "5. Word Problem" << endl;
+                cout << "6. Back to main menu" << endl;
                 cout << "> ";
                 cin >> math_menu;
 
@@ -481,6 +482,16 @@ int main()
                                     cout << "invalid response" << endl;
                                 }
                             }
+
+                            cout << "---- MATH QUIZ ----" << endl;
+                            cout << "1. Addition" << endl;
+                            cout << "2. Subtraction" << endl;
+                            cout << "3. Multiplication" << endl;
+                            cout << "4. Division" << endl;
+                            cout << "5. Word Problem" << endl;
+                            cout << "6. Back to main menu" << endl;
+                            cout << "> ";
+                            cin >> math_menu;
                             
                             break;
                         }
@@ -541,6 +552,16 @@ int main()
                                 }
                             }
 
+                            cout << "---- MATH QUIZ ----" << endl;
+                            cout << "1. Addition" << endl;
+                            cout << "2. Subtraction" << endl;
+                            cout << "3. Multiplication" << endl;
+                            cout << "4. Division" << endl;
+                            cout << "5. Word Problem" << endl;
+                            cout << "6. Back to main menu" << endl;
+                            cout << "> ";
+                            cin >> math_menu;
+
                             break;
                         }
                         
@@ -600,6 +621,16 @@ int main()
                                 }
                             }
 
+                            cout << "---- MATH QUIZ ----" << endl;
+                            cout << "1. Addition" << endl;
+                            cout << "2. Subtraction" << endl;
+                            cout << "3. Multiplication" << endl;
+                            cout << "4. Division" << endl;
+                            cout << "5. Word Problem" << endl;
+                            cout << "6. Back to main menu" << endl;
+                            cout << "> ";
+                            cin >> math_menu;
+
                             break;
                         }
                         
@@ -616,8 +647,8 @@ int main()
                                 if (math_mode == 1)
                                 {
                                     // hard
-                                    double num1 = 240.8;
-                                    double num2 = 4.8;
+                                    double num1 = 252.75;
+                                    double num2 = 84.25;
                                     double answer = num1 / num2;
                                     double user_answer;
 
@@ -636,7 +667,7 @@ int main()
                                 else if (math_mode == 2)
                                 {
                                     // easy
-                                    int num1 = 244;
+                                    int num1 = 144;
                                     int num2 = 12;
                                     int answer = num1 / num2;
                                     int user_answer;
@@ -659,6 +690,16 @@ int main()
                                 }
                             }
 
+                            cout << "---- MATH QUIZ ----" << endl;
+                            cout << "1. Addition" << endl;
+                            cout << "2. Subtraction" << endl;
+                            cout << "3. Multiplication" << endl;
+                            cout << "4. Division" << endl;
+                            cout << "5. Word Problem" << endl;
+                            cout << "6. Back to main menu" << endl;
+                            cout << "> ";
+                            cin >> math_menu;
+
                             break;
                         }
 
@@ -667,6 +708,13 @@ int main()
                             // word problem
                             cout << "broken" << endl;
                             break;
+                        }
+
+                        case 6:
+                        {
+                            // exit
+                            cout << "Bye!" << endl;
+                            math_go = false;
                         }
                     }
                 }
