@@ -8,6 +8,13 @@
 
 using namespace std;
 
+int diceRoll()
+{
+    srand(time(0)); 
+    int roll = 0; 
+    roll= rand() % 6 + 1;
+}
+
 int main()
 {
     int die1, die2, total, bet, winnings;
