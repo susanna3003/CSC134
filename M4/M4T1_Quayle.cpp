@@ -1,4 +1,8 @@
 #include <iostream>
+// CSC 134
+// M4T1 - counting and squaring
+// Susanna Quayle
+// 10/8/2024 
 
 using namespace std;
 
