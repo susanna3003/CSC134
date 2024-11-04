@@ -12,8 +12,8 @@ using namespace std;
 
 // declare funcs
 void avg_rainfall();
-void calc_hyperrectangle(double width, double length, double height);
-void get_roman_num();
+double calc_hyperrectangle(double width, double length, double height);
+void get_roman_num(int digit);
 double area_circle();
 double area_rectangle();
 double area_triangle();
@@ -128,7 +128,7 @@ int main()
                         plus_one_hours = false;
                     }
                 }
-                distance_traveled();
+                distance_traveled(speed, hours);
                 break;
             }
 
@@ -215,7 +215,7 @@ void get_roman_num(digit)
     }
 }
 
-void calc_hyperrectangle(double width, double length, double height)
+double calc_hyperrectangle(double width, double length, double height)
 {
     double volume = width * length * height;
     return volume;
