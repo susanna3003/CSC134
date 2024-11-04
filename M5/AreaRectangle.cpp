@@ -1,5 +1,5 @@
 // M5LAB2
-// Header goes here
+// Madison, Leeanna, Susanna
 
 #include <iostream>
 using namespace std;
@@ -8,6 +8,10 @@ using namespace std;
 // the getLength,
 // getWidth, getArea, and displayData
 // functions here.
+double getLength();
+double getWidth();
+double getArea(double length, double width);
+void displayData(double length, double width, double area);
 
 int main()
 {
@@ -22,10 +26,10 @@ int main()
    length = getLength();
    
    // Get the rectangle's width.
-   width = getWidth()
+   width = getWidth();
    
    // Get the rectangle's area.
-   are = getArea();
+   area = getArea(length, width);
    
    // Display the rectangle's data.
    displayData(length, width, area);
@@ -37,3 +41,27 @@ int main()
 // TODO: write the getLength, getWidth, getArea,    *
 // and displayData functions below.                 *
 //***************************************************
+
+double getLength(){
+double length;
+cout << "What is the length? ";
+cin >> length;
+return length;
+}
+
+double getWidth(){
+double width;
+cout << "What is the width? ";
+cin >> width;
+return width;   
+}
+
+double getArea(double length, double width){
+return length * width;
+}
+
+void displayData(double length, double width, double area){
+cout << "Length: " << length << endl;
+cout << "Width: " << width << endl;
+cout << "Area: " << area << endl;
+}
