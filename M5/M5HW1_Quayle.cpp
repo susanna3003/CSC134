@@ -333,10 +333,10 @@ bool distance_traveled(double speed, double hours)
     bool speed_positive = true;
     cout << "Hour\tDistance Traveled" << endl;
     cout << "------------------------" << endl;
-    for (int i = 1; i < hours; i++)
+    for (int i = 0; i < hours; i++)
     {
         double distance = speed * hours;
-        cout << i << "\t" << distance << endl;
+        cout << i+1 << "\t" << distance << endl;
     }
     return speed_positive = false;
 }
