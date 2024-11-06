@@ -87,12 +87,18 @@ int main()
             case 4:
             {
                 // Geometry Calculator
+                int geometry_choice;
                 cout << "Welcome to the Geometry Calculator!" << endl;
                 cout << "1. Calculate the Area of a Circle" << endl;
                 cout << "2. Calculate the Area of a Rectangle" << endl;
                 cout << "3. Calculate the Area of a Triangle" << endl;
                 cout << "4. Quit" << endl;
                 cout << "Enter your choice (1-4): ";
+                cin << geometry_choice;
+                switch(geometry_choice)
+                {
+
+                }
                 break;
             }
 
@@ -221,15 +227,18 @@ double calc_hyperrectangle(double width, double length, double height)
     return volume;
 }
 
-double area_circle() {
+double area_circle() 
+{
     
 }
 
-double area_rectangle() {
+double area_rectangle() 
+{
 
 }
 
-double area_triangle() {
+double area_triangle() 
+{
 
 }
 
