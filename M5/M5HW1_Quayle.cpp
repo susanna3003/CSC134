@@ -38,7 +38,7 @@ int main()
         cout << "1. Avg Rainfall" << endl;
         cout << "2. 3D Hyperrectangle" << endl;
         cout << "3. Roman Numeral" << endl;
-        cout << "4. Geometry Calc" << endl;
+        cout << "4. Geometry Calculator" << endl;
         cout << "5. Distance Traveled" << endl;
         cout << "6. Exit" << endl;
         cout << "> ";
@@ -87,16 +87,45 @@ int main()
             case 4:
             {
                 // Geometry Calculator
+                bool geometry_menu = true;
                 int geometry_choice;
+                while (geometry_menu) {
                 cout << "Welcome to the Geometry Calculator!" << endl;
                 cout << "1. Calculate the Area of a Circle" << endl;
                 cout << "2. Calculate the Area of a Rectangle" << endl;
                 cout << "3. Calculate the Area of a Triangle" << endl;
                 cout << "4. Quit" << endl;
                 cout << "Enter your choice (1-4): ";
-                cin << geometry_choice;
-                switch(geometry_choice)
-                {
+                cin >> geometry_choice;
+                
+                switch(geometry_choice) {
+                    case 1: {
+                        area_circle();
+                        break;
+                    }
+                    
+                    case 2: {
+                        area_rectangle();
+                        break;
+                    }
+
+                    case 3: {
+                        area_triangle();
+                        break;
+                    }
+
+                    case 4: {
+                        cout << "Thank you for using Geometry Calculator. Goodbye!" << endl;
+                        geometry_menu = false;
+                        break;
+                    }
+
+                    default: {
+                        cout << "Invalid choice. Please choose a number between 1-4." << endl;
+                        break;
+                    }
+
+                }
 
                 }
                 break;
@@ -229,17 +258,54 @@ double calc_hyperrectangle(double width, double length, double height)
 
 double area_circle() 
 {
-    
+    double radius;
+    double c_area;
+    cout << "Enter the radius of your circle: " << endl;
+    cin >> radius;
+    if (radius >= 0) {
+        c_area = radius * (3.14159);
+        cout << "The area of your circle is " << c_area << "." << endl;
+    }
+    else {
+        cout << "Input is invalid. The radius cannot be less than zero." << endl;
+    }
+
 }
 
 double area_rectangle() 
 {
-
+    double length;
+    double width;
+    double r_area;
+    cout << "Enter the length of your rectangle: " << endl;
+    cin >> length;
+    cout << "Enter the width of your rectangle: " << endl;
+    cin >> width;
+    if (length > 0 && width > 0) {
+        r_area = length * width;
+        cout << "The area of your reactangle is " << r_area << "." << endl;
+    }
+    else {
+        cout << "Input is invalid. Only enter positive values for length and width." << endl;
+    }
 }
 
 double area_triangle() 
 {
-
+    double base;
+    double height;
+    double t_area;
+    cout << "Enter the base of your triangle: " << endl;
+    cin >> base;
+    cout << "Enter the height of your triangle: " << endl;
+    cin >> height;
+    if (base > 0 && height > 0) {
+        t_area = base * height * (0.5);
+        cout << "The area of your triangle is " << t_area << "." << endl;
+    }
+    else {
+        cout << "Input is invalid. Only enter positive values for base and height." << endl;
+    }
 }
 
 void distance_traveled(double speed, double hours)
