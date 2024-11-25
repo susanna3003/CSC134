@@ -39,14 +39,12 @@ int main()
     cin >> name;
     cout << "Nice to meet you, " << name << endl;
     
-/*
     cout << "\t\tWelcome to\t\t" << endl;
     cout << "   _____  ____    ____   __  __   _   _  _        _      __" << endl;
     cout << "  |  ___||  _  \\ |  _ \\ |  \\/  | | | | || |      / \\    |  |" << endl;
     cout << "  | |__  | | | | | |_) || \\  / | | | | || |     / _ \\   |  |" << endl;
     cout << "  |  __| | |_| | |  _ < | |\\/| | | | | || |___ / ___ \\  |  |" << endl;
     cout << "  |_|     \\___/  |_| \\_\\|_|  |_| \\_____/\\_____/_/   \\_\\ |__|\n" << endl;
-*/
 
     print_with_delay(
         "You are an excited new rookie coming onto the grid fresh off of a successful season in F2!"
