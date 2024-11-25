@@ -1,5 +1,5 @@
 // TextPrinter.cpp
-#include "TextPrinter.h"
+#include "delay_print.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
