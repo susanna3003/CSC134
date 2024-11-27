@@ -25,6 +25,23 @@ void hard_quali_williams();
 void soft_quali_vcarb();
 void med_quali_vcarb();
 void hard_quali_vcarb();
+void soft_start_williams();
+void med_start_williams();
+void soft_start_vcarb();
+void med_start_vcarb();
+void soft_pit_now_williams();
+void soft_pit_later_williams();
+void med_pit_now_williams();
+void med_pit_later_williams();
+void soft_pit_now_vcarb();
+void soft_pit_later_vcarb();
+void med_pit_now_vcarb();
+void med_pit_later_vcarb();
+
+// globals for changing text speed
+const int SLOW = 80;
+const int MEDIUM = 40;
+const int FAST = 25;
 
 int main()
 {
@@ -35,6 +52,22 @@ int main()
     int team_choice;
     int tire_choice;
 
+    // AN - make better
+    cout << "Enter text speed 1(slow) 2(medium) 3(fast): "
+    int spd, delay;
+    cin >> spd;
+    if (spd == 1) {
+        delay = SLOW;
+    }
+    else if (spd == 3) {
+        delay = FAST;
+    }
+    else {
+        // default to medium
+        delay = MEDIUM;
+    }
+    //
+
     print_with_delay("\t\tWelcome to\t\t");
     cout << "   _____  ____    ____   __  __   _   _  _        _      __" << endl;
     cout << "  |  ___||  _  \\ |  _ \\ |  \\/  | | | | || |      / \\    |  |" << endl;
@@ -44,6 +77,7 @@ int main()
 
     print_with_delay("You are an excited new rookie coming onto the grid fresh off of a successful season in F2!");
     print_with_delay("You have been hand-picked by two different teams to take over an empty seat halfway through the season, a chance any rookie would jump at!");
+    // CHAP 1: TEAM PICK
     print_with_delay("Do you drive for Williams or Visa Cash App Redbull?");
     cout << "[1. Williams Racing] [2. Visa Cash App Redbull]\n" << endl;
     while (!(cin >> team_choice)) 
@@ -65,6 +99,7 @@ int main()
         cout << "Invalid choice" << endl;
     }
 
+    // CHAP 2: TIRE PICK FOR QUALI WILLIAMS
     print_with_delay("Saturday dawns on your first qualifying session as a Formula 1 driver. The team strategists are hard at work yet offer you the chance to choose your tires for the session.");
     cout << "[1. Soft tires] [2. Medium tires] [3. Hard tires]\n" << endl;
     while (!(cin >> tire_choice)) 
@@ -107,6 +142,42 @@ int main()
     {
         cout << "Invalid choice" << endl;
     }
+    // CHAP 3: RACE DAY
+    print_with_delay("The sun is shining bright over the Circuit of the Americas, and the air is buzzing with excitement.");
+    print_with_delay("Welcome to race day at the Austin, Texas Grand Prix!");
+    cout << "[1. Soft tires] [2. Medium tires]\n" << endl;
+    while (!(cin >> tire_choice)) 
+    {
+        cout << "Invalid input. Please enter an integer: " << endl;
+        cin.clear(); 
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    if (team_choice == 1)
+    {
+        if (tire_choice == 1)
+        {
+            soft_start_williams();
+        }
+        else if (tire_choice == 2)
+        {
+            med_start_williams();
+        }
+    }
+    else if (team_choice == 2)
+    {
+        if (tire_choice == 1)
+        {
+            soft_start_vcarb();
+        }
+        else if (tire_choice == 2)
+        {
+            med_start_vcarb();
+        }
+    }
+    else
+    {
+        cout << "Invalid choice" << endl;
+    }    
 }
 
 void print_with_delay(const string& text, int delay_milliseconds)
@@ -225,7 +296,15 @@ void med_quali_williams()
 
 void hard_quali_williams()
 {
-
+    print_with_delay("You chose to qualify on the hard tires. The engineers exchange worried looks, but James Vowles gives a slow nod, muttering, 'Let’s see what happens.'");
+    print_with_delay("As you head out on track, the radio chimes in: 'Alright, first driver in years to try hards in qualifying. If this works, it’s genius. If not... well, we tried.'");
+    print_with_delay("Your out lap feels more like a Sunday drive than a flying lap, with the tires refusing to warm up. By the time you cross the line to start your first timed lap, you're already in trouble.");
+    print_with_delay("Midway through your lap, the car begins to slide through every corner. 'Grip? What grip?' your race engineer jokes, though his voice betrays concern.");
+    print_with_delay("Out of nowhere, Alex Albon appears in your mirrors, and the radio warns: 'Albon is behind you, and he’s not thrilled with your pace. Don’t hold him up.'");
+    print_with_delay("You try to stay out of the way, but your cautious move to the inside line confuses him, forcing him to abandon his lap. Over the radio, you hear Albon yell, 'Seriously? We’re not fighting for pole here, mate!'");
+    print_with_delay("As you trundle back into the garage, the engineers avoid eye contact. The atmosphere is heavy, like someone just brought cold pizza to a team dinner.");
+    print_with_delay("James Vowles sighs and pulls out his phone. You hear snippets of the conversation: 'Yes, Logan? It’s Vowles. Look, we might’ve... miscalculated. What’s your availability next weekend?'");
+    print_with_delay("Your qualifying ends with P19, just ahead of the car that spun out. As a consolation, Vowles promises you’ll get the fresh fruit tray before Albon in the hospitality suite.");
 }
 
 void soft_quali_vcarb()
@@ -248,5 +327,32 @@ void med_quali_vcarb()
 
 void hard_quali_vcarb()
 {
+    print_with_delay("You chose to qualify on the hard tires. The engineers exchange confused glances, but Mekies reluctantly gives the go-ahead.");
+    print_with_delay("As you pull out onto the track, the radio crackles: 'Alright, you're the only one on hards, so let's make it... uh, interesting.'");
+    print_with_delay("The out lap feels sluggish, like you're driving on a frozen lake. By the time you start your flying lap, the tires are still stone cold.");
+    print_with_delay("Your lap times are atrocious, and you're struggling to find grip in every corner. Halfway through the lap, Yuki Tsunoda appears in your mirrors, clearly annoyed.");
+    print_with_delay("'Yuki is closing in fast,' the race engineer warns. 'Don’t let him ruin your lap—or his!'");
+    print_with_delay("Before you can react, Yuki dives down the inside, forcing you wide. Your flying lap is ruined, and you both get stuck in a heated exchange of hand gestures on the cool-down lap.");
+    print_with_delay("Back in the garage, the team is not impressed. The engineers are furiously shaking their heads, while one mutters, 'Why didn’t we just keep the crazy Australian...'");
+    print_with_delay("Your qualifying ends with P20, and Mekies offers a half-hearted 'good luck' before the garage empties out.");
+}
 
+void soft_start_williams()
+{
+    // pit choice
+}
+
+void med_start_williams()
+{
+    // pit choice
+}
+
+void soft_start_vcarb()
+{
+    // pit choice
+}
+
+void med_start_vcarb()
+{
+    // pit choice
 }
