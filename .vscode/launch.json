@@ -1,7 +1,26 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "name": "Debug C++ Program",  // Custom name for your configuration
+            "type": "cppdbg",  // Use cppdbg for debugging C++ code
+            "request": "launch",  // Launch the program
+            "program": "${workspaceFolder}/bin/my_program",  // Path to your executable
+            "args": [],  // Optional: Arguments to pass to the program
+            "stopAtEntry": false,  // Whether to break at the program's entry point
+            "cwd": "${workspaceFolder}",  // Working directory for the program
+            "environment": [],
+            "externalConsole": false,  // Set to true if you want to use an external console
+            "MIMode": "gdb",  // Debugger to use (gdb for Linux or macOS, lldb for macOS, or cppvsdbg for Windows)
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build",  // Optional: Task to run before debugging (e.g., a build task)
+            "miDebuggerPath": "/usr/bin/gdb"  // Path to GDB (adjust if necessary)
+        }
+    ]
 }
